@@ -12,13 +12,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css'>
+    <link rel='stylesheet' href='https://themes.audemedia.com/html/goodgrowth/css/owl.theme.default.min.css'>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
+  <style>
     *{
       scroll-behavior: smooth;
     }
-      html {
+      html,body {
       font-size: 14px;
+      height:100%;
+
       }
       @media (min-width: 768px) {
       html {
@@ -52,10 +57,95 @@
       .card-deck .card {
       min-width: 220px;
       }
+      .shadow-effect {
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+      border:1px solid #ECECEC;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+        }
+        #testimonials-list .shadow-effect p {
+            font-family: inherit;
+            font-size: 17px;
+            line-height: 1.5;
+            margin: 0 0 17px 0;
+            font-weight: 300;
+        }
+        .testimonial-name {
+            margin: -17px auto 0;
+            display: table;
+            width: auto;
+            background: #3190E7;
+            padding: 9px 35px;
+            border-radius: 12px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+        }
+        #testimonials-list .item {
+            text-align: center;
+            padding: 50px;
+            margin-bottom:20px;
+            opacity: .2;
+            -webkit-transform: scale3d(0.8, 0.8, 1);
+            transform: scale3d(0.8, 0.8, 1);
+            transition: all 0.3s ease-in-out;
+        }
+        #testimonials-list .owl-item.active.center .item {
+            opacity: 1;
+            -webkit-transform: scale3d(1.0, 1.0, 1);
+            transform: scale3d(1.0, 1.0, 1);
+        }
+        .owl-carousel .owl-item img {
+            -webkit-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+          max-width: 90px;
+          border-radius: 50%;
+            margin: 0 auto 17px;
+        }
+        #testimonials-list.owl-carousel .owl-dots .owl-dot.active span,
+      #testimonials-list.owl-carousel .owl-dots .owl-dot:hover span {
+            background: #3190E7;
+            -webkit-transform: translate3d(0px, -50%, 0px) scale(0.7);
+                    transform: translate3d(0px, -50%, 0px) scale(0.7);
+        }
+      #testimonials-list.owl-carousel .owl-dots{
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      }
+      #testimonials-list.owl-carousel .owl-dots .owl-dot{
+      display: inline-block;
+      }
+        #testimonials-list.owl-carousel .owl-dots .owl-dot span {
+            background: white;
+            display: inline-block;
+            border : 5px solid #3190E7;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 2px 5px;
+            -webkit-transform: translate3d(0px, -50%, 0px) scale(0.3);
+                    transform: translate3d(0px, -50%, 0px) scale(0.3);
+            -webkit-transform-origin: 50% 50% 0;
+                    transform-origin: 50% 50% 0;
+            transition: all 250ms ease-out 0s;
+            width: 20px;
+        }
+        @media(max-width: 450px){
+          .testimonial .wrapper p{
+            display:none;
+          }
+          .testimonial .testimonial-name{
+             margin-top: 20px;
+             padding:10px;
+             border-radius:0;
+          }
+        }
     </style>
   </head>
 <body>
-<nav class="navbar navbar-expand-sm border-bottom navbar-light shadow-sm " id="Navbar">
+<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light shadow-sm fixed-top" id="Navbar">
   <a class="navbar-brand text-dark" style="letter-spacing:3px; font-size: 30px; font-weight:bold" href="#"><span class="brand"></span></a>
   <button class="navbar-toggler border text-dark" type="button" data-toggle="collapse" data-target="#r">
   <span class="navbar-toggler-icon"></span></button>
@@ -79,18 +169,11 @@
     <a class="btn btn-secondary" href="#">Check</a></div></div></div>
   </div>
 </nav>
-
-<div class="row" id="home">
-  <div class="col-sm pl-5 my-auto">
-  <h1 class="display-4">Hello,</h1>
-  <h1 class="text-muted" style="font-weight:400">We're Yupsilan</h1>
-  <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-  <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p></div>
-  <div class="col-sm" style="height:50%;">
-  <img src="sam.jpg" class="img-fluid rounded p-1" alt="" style="height:100%;"></div>
-</div>
+<section class="row" id="home" style="height:100%;width:100%"></section>
 <section class="container-fluid p-5 border-top" id="about">
   <div>
+
+
   <h1 class="display-4">About</h1>
   <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
   </div>
@@ -102,7 +185,7 @@
   <div class="carousel-item active">
 
   <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
   <div class="card mb-2">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
@@ -112,7 +195,7 @@
   <a class="btn btn-primary">Check</a></div></div></div>
 
   <div class="col-md-4 clearfix d-none d-md-block">
-  <div class="card mb-2">
+  <div class="card mb-2"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -121,7 +204,7 @@
   <a class="btn btn-primary">Check</a></div></div></div>
 
   <div class="col-md-4 clearfix d-none d-md-block">
-  <div class="card mb-2">
+  <div class="card mb-2"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -192,8 +275,8 @@
 <section class="container-fluid p-5 border-top" id="support">
   <div>
    <h1 class="display-4">Support</h1>
-   <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
- </div>
+   <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+  </div>
       <div class="row mb-2">
       <div class="col-md-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="100"
     data-aos-duration="1000">
@@ -246,12 +329,135 @@
       </div>
       </div>
       </div>
-     </div>
-</section>
+     </div></section>
+
+
+
+
+<section class="container-fluid p-5 border-top testimonial">
+  <div>
+  <h1 class="display-4">Testimonial</h1>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+  </div>
+	<div class="wrapper">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="testimonials-list" class="owl-carousel">
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>    </div>
+              </div>
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>    </div>
+              </div>
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>    </div>
+              </div>
+
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>    </div>  </div>
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>    </div>
+              </div>
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img class="imgPlaceholder" src="p.png" alt="">
+                <span class="text-primary" style="font-size:50px;">&#8221;</span>
+                <p style="margin-top:-20px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget suscipit sem. Vivamus convallis vulputate leo non ultricies.</p>
+                <div class="mb-4">
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="fas fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>
+                 <i class="far fa-star text-primary mx-auto"></i>    </div>
+              </div>
+              <div class="testimonial-name">Reviewer Name</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+
+
+
+
 <section class="container-fluid p-5 border-top" id="pricing">
   <div >
    <h1 class="display-4">Pricing</h1>
-   <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+   <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
   </div>
 
   <div class="card-deck mb-3 text-center">
@@ -307,6 +513,34 @@ data-aos-duration="1000">
 <div class="loader-wrapper">
   <span class="loader"><span class="display-4 text-light" style="font-weight:400">Loading</span></span>
 </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js'></script>
+<script>
+  jQuery(document).ready(function($) {
+        		"use strict";
+		        $('#testimonials-list').owlCarousel({
+		            loop: true,
+		            center: true,
+		            items: 3,
+		            margin: 0,
+		            autoplay: true,
+		            dots:true,
+		            autoplayTimeout: 8500,
+		            smartSpeed: 450,
+		            responsive: {
+		              0: {
+		                items: 1
+		              },
+		              768: {
+		                items: 2
+		              },
+		              1170: {
+		                items: 3
+		              }
+		            }
+		        });
+        	});
+</script>
 <script type="text/javascript">
   $(window).on("load",function(){
   $(".loader-wrapper").fadeOut("slow");
