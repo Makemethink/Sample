@@ -181,16 +181,18 @@
            }
          }
          .bord{
-           content:'';
+           content:''; 
            background: white;
            height: 6px;
            width:260px;
            margin: auto;
+           display: none;
            animation: bords 5s 1;
                 }
           @media (min-width: 576px){
             .bord{
               width: 420px;
+              display: block;
             }
           }
  @keyframes bords {
@@ -224,7 +226,6 @@
         .section {
   position: relative;
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,7 +259,7 @@
     </style>
   </head>
 <body>
-<nav class="navbar navbar-expand-sm border-bottom navbar-light shadow-sm bg-light" id="Navbar" style="z-index:10">
+<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light" id="Navbar" style="z-index:10">
   <a class="navbar-brand text-dark" id="run" style="letter-spacing:3px; font-size: 25px; font-weight:600 "href="#"><span class="brand"></span></a>
   <button class="navbar-toggler border text-dark" type="button" data-toggle="collapse" data-target="#r">
   <span class="navbar-toggler-icon"></span></button>
@@ -282,7 +283,7 @@
     <a class="btn btn-secondary" href="#">Check</a></div></div></div>
   </div>
 </nav>
-<section class="row" id="home" style="height:100%;width:100%">
+<section id="home" class="bg-light" style="height:100%;width:100%">
 
   <div class="video-container section">
              <div class="branding" style=" position:absolute;">
@@ -312,7 +313,7 @@
 
 
 
-<section class="container-fluid p-5 border-top" id="about">
+<section class="container-fluid p-5" id="about">
   <div>
 
 
