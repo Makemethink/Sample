@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -132,6 +133,84 @@
             transition: all 250ms ease-out 0s;
             width: 20px;
         }
+        @media (max-width: 575px){
+          nav #hire{
+            margin-top:8px;
+            margin-bottom: 8px;
+          }
+         .section #innovo{
+           font-size: 50px;
+         }
+         .section #yup{
+           font-size: 60px;
+
+         }      }
+         #innovo{
+           font-size: 80px;
+         }
+
+         .branding{
+           text-align: center;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%,-50%);
+           width: 100%;
+         }
+         .branding .text{
+           display: block;
+         }
+         .text1{
+           position: relative;
+           animation: texts 3s 1;
+        }
+
+         @keyframes texts {
+           0%{
+             margin-bottom: -250px;
+           }
+           30%{
+             letter-spacing: 25px;
+             margin-bottom: -250px;
+             color: transparent;
+                     }
+           85%{
+             letter-spacing: 8px;
+             margin-bottom: -250px;
+
+           }
+         }
+         .bord{
+           content:'';
+           background: white;
+           height: 6px;
+           width:260px;
+           margin: auto;
+           animation: bords 5s 1;
+                }
+          @media (min-width: 576px){
+            .bord{
+              width: 420px;
+            }
+          }
+ @keyframes bords {
+   0%{
+     width: 10px;
+   }
+   30%{
+     width: 40px;
+             }
+   60%{
+     width: 90px;
+
+   }
+   90%{
+     width: 160px;
+
+   }
+ }
+
+ }
         @media(max-width: 450px){
           .testimonial .wrapper p{
             display:none;
@@ -142,19 +221,53 @@
              border-radius:0;
           }
         }
+        .section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section h1 {
+  text-align: center;
+  font-size: 6rem;
+  padding: 20px;
+  margin: 15px;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.2;
+}
+
     </style>
   </head>
 <body>
-<nav class="navbar navbar-expand-sm border-bottom navbar-light shadow-sm" id="Navbar">
-  <a class="navbar-brand text-dark" id="run" style="letter-spacing:3px; font-size: 30px; font-weight:bold" href="#"><span class="brand"></span></a>
+<nav class="navbar navbar-expand-sm border-bottom navbar-light shadow-sm bg-light" id="Navbar" style="z-index:10">
+  <a class="navbar-brand text-dark" id="run" style="letter-spacing:3px; font-size: 25px; font-weight:600 "href="#"><span class="brand"></span></a>
   <button class="navbar-toggler border text-dark" type="button" data-toggle="collapse" data-target="#r">
   <span class="navbar-toggler-icon"></span></button>
   <div class="collapse navbar-collapse justify-content-end" id="r"><ul class="navbar-nav"><li class="nav-item">
   <a class="p-2 nav-link text-dark" href="#home">Home</a></li><li class="nav-item">
-  <a class="p-2 nav-link text-dark" href="#about">About us</a></li><li class="nav-item">
+  <a class="p-2 nav-link text-dark" href="#about">About</a></li><li class="nav-item">
   <a class="p-2 nav-link text-dark" href="#support">Support</a></li><li class="nav-item">
   <a class="p-2 nav-link text-dark" href="#pricing">Pricing</a></li><li class="nav-item">
-  <button class="btn btn-outline-primary my-2 ml-2" data-toggle="modal" data-target="#myModal">Hire us</button></li></ul></div>
+  <button class="btn btn-outline-primary ml-2" id="hire" data-toggle="modal" data-target="#myModal">Hire us</button></li></ul></div>
   <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered model-lg">
     <div class="modal-content">
@@ -169,7 +282,36 @@
     <a class="btn btn-secondary" href="#">Check</a></div></div></div>
   </div>
 </nav>
-<section class="row" id="home" style="height:100%;width:100%"></section>
+<section class="row" id="home" style="height:100%;width:100%">
+
+  <div class="video-container section">
+             <div class="branding" style=" position:absolute;">
+               <h1 class="display-4 text text1"  id="yup" style="color:white;font-weight:500;">Yupsilan</h1>
+               <div class="bord"></div>
+               <p class="lead text text2" id="innovo" style="text-align:center;color:white;font-weight:500">Innovations</p>
+             </div>
+             <div class="color-overlay"></div>
+             <video autoplay loop muted>
+                 <source src="video.mp4" type="video/mp4">
+             </video>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="container-fluid p-5 border-top" id="about">
   <div>
 
@@ -181,21 +323,20 @@
   <div class="controls-top text-center">
   <a class="btn-floating" href="#mul" data-slide="prev"><i class="material-icons text-primary" style="font-size:48px;">chevron_left</i></a>
   <a class="btn-floating" href="#mul" data-slide="next"><i class="material-icons text-primary" style="font-size:48px;">chevron_right</i></i></a></div>
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner" role="listbox" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
   <div class="carousel-item active">
 
   <div class="row">
-  <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
-  <img class="card-img-top" src="sam.jpg"
-  alt="Card image cap">
-  <div class="card-body">
+  <div class="col-md-4">
+  <div class="card mb-2 shadow-sm">
+  <img class="card-img-top" src="sam.jpg" alt="Card image cap">
+  <div class="card-body ">
   <h4 class="card-title">Designer</h4>
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block">
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -203,8 +344,8 @@
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block" >
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -214,8 +355,8 @@
 
   <div class="carousel-item">
   <div class="row">
-  <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4" >
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -223,8 +364,8 @@
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block">
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -232,8 +373,8 @@
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block">
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -242,9 +383,9 @@
   <a class="btn btn-primary">Check</a></div></div></div></div></div>
 
   <div class="carousel-item">
-  <div class="row">
-  <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="row" >
+  <div class="col-md-4" >
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -252,8 +393,8 @@
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block">
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -261,8 +402,8 @@
   <p class="card-text text-muted">Nothing here</p>
   <a class="btn btn-primary">Check</a></div></div></div>
 
-  <div class="col-md-4 clearfix d-none d-md-block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-  <div class="card mb-2">
+  <div class="col-md-4 clearfix d-none d-md-block">
+  <div class="card mb-2 shadow-sm">
   <img class="card-img-top" src="sam.jpg"
   alt="Card image cap">
   <div class="card-body">
@@ -549,7 +690,7 @@ data-aos-duration="1000">
 <script type="text/javascript" src="typed.js"></script>
   <script type="text/javascript">
     var typed = new Typed(".brand",{
-      strings: ["Yupsilan", "Freelancing","Developing"],
+      strings: ["Yupsilan", "Freelancing","Developing","Company"],
        typeSpeed : 80,
        backSpeed : 80,
        loop: true
