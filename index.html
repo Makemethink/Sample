@@ -158,6 +158,7 @@
          }
          .branding .text{
            display: block;
+           z-index:  1000;
          }
          .text1{
            position: relative;
@@ -225,6 +226,7 @@
         .section {
   position: relative;
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,7 +241,7 @@
 }
 
 .video-container {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -251,14 +253,23 @@
   left: 0;
   background-color: black;
   width: 100%;
-  height: 100%;
-  opacity: 0.2;
+  height: 100vh;
+  opacity:0.2;
 }
-
+@media(max-width: 450px){
+  .testimonial .wrapper p{
+    display:none;
+  }
+  .testimonial .testimonial-name{
+     margin-top: 20px;
+     padding:10px;
+     border-radius:0;
+  }
+}
     </style>
   </head>
 <body>
-<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light fixed-top" id="Navbar">
+<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light fixed-top" id="Navbar" style="z-index:10">
   <a class="navbar-brand text-dark" id="run" style="letter-spacing:3px; font-size: 25px; font-weight:600 "href="#"><span class="brand"></span></a>
   <button class="navbar-toggler border text-dark" type="button" data-toggle="collapse" data-target="#r">
   <span class="navbar-toggler-icon"></span></button>
@@ -282,11 +293,10 @@
     <a class="btn btn-secondary" href="#">Check</a></div></div></div>
   </div>
 </nav>
+<div class="container-fluid" id="home" style="padding:0;margin:0;">
 
 
-<section id="home" class="bg-light" style="height:100%;width:100%">
-
-  <div class="video-container section" style="height:100%">
+  <div class="video-container section" style="height:100%;width:100%">
              <div class="branding" style=" position:absolute;">
                <h1 class="display-4 text text1"  id="yup" style="color:white;font-weight:500;">Yupsilan</h1>
                <div class="bord"></div>
@@ -295,8 +305,12 @@
              <div class="color-overlay"></div>
              <video autoplay loop muted>
                  <source src="video.mp4" type="video/mp4">
-             </video>
-</section>
+             </video></div>
+</div>
+
+
+
+
 
 <section class="container-fluid p-5" id="about">
   <div>
