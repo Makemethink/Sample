@@ -251,14 +251,14 @@
   left: 0;
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0.2;
 }
 
     </style>
   </head>
 <body>
-<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light" id="Navbar" style="z-index:10">
+<nav class="navbar navbar-expand-sm border-bottom navbar-light bg-light fixed-top" id="Navbar">
   <a class="navbar-brand text-dark" id="run" style="letter-spacing:3px; font-size: 25px; font-weight:600 "href="#"><span class="brand"></span></a>
   <button class="navbar-toggler border text-dark" type="button" data-toggle="collapse" data-target="#r">
   <span class="navbar-toggler-icon"></span></button>
@@ -282,9 +282,11 @@
     <a class="btn btn-secondary" href="#">Check</a></div></div></div>
   </div>
 </nav>
+
+
 <section id="home" class="bg-light" style="height:100%;width:100%">
 
-  <div class="video-container section">
+  <div class="video-container section" style="height:100%">
              <div class="branding" style=" position:absolute;">
                <h1 class="display-4 text text1"  id="yup" style="color:white;font-weight:500;">Yupsilan</h1>
                <div class="bord"></div>
@@ -295,22 +297,6 @@
                  <source src="video.mp4" type="video/mp4">
              </video>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <section class="container-fluid p-5" id="about">
   <div>
@@ -683,6 +669,18 @@ data-aos-duration="1000">
   $(".loader-wrapper").fadeOut("slow");
   });
 </script>
+<script>
+$(document).ready(function(){
+$(window).scroll(function(){
+if($(window).scrollTop() > $("#home").height()){
+    $("#Navbar").hide();
+}
+else{
+    $("#Navbar").show();
+}
+
+})
+})</script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
